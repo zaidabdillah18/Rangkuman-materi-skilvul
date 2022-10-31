@@ -1,9 +1,12 @@
-Writing & Presentation Test - Week 6
+Writing & Presentation Test - Week 6 backend 
+
 Web Server & REST API
+
 Web Server
 Web server terdiri dari 2 komponen penting :
-Hardware
-Software
+
+Hardware & Software
+
 Hardware adalah komputer yang menyimpan software web server dan komponen file situs web.
 Software adalah web server yang mengontrol bagaimana pengguna mengakses file yang di hosting.
 Static Web Server adalah web server yang mengirim file yang di hosting kepada pengguna sama seperti yang ada pada server.
@@ -16,7 +19,9 @@ Mengontrol akses pada content.
 Menyimpan informasi sesi / status.
 Pemberitahuan dan komunikasi.
 Analisa Data
+
 REST API
+
 REST (Representational State Transfer) adalah gaya arsitektur untuk menyediakan standar antara sistem komputer di web sehingga memudahkan sistem untuk berkomunikasi satu sama lain.
 Komunikasi antara Client dengan Server
 Membuat Requests
@@ -24,11 +29,34 @@ REST memerlukan request yang dibuat oleh client yang bertujuan untukmendapatkan 
 HTTP Verbs
 Terdapat 4 HTTP verb dasar yang digunakan dalam request untuk berinteraksi dengan resource pada REST system : - GET digunakan untuk mendapatkan data spesifik (dengan id) atau koleksi data. - POST digunakan untuk membuat data baru. - PUT digunakan untuk mengupdate data spesifik (dengan id). - DELETE digunakan untuk menghapus data spesifik (dengan id).
 Headers and Accept Parameters
-Tipe umum yang biasa digunakan : - Image - image/png, image/jpeg, image/gif - Audio - audio/wav, audio/mpeg - Video - video/mp4, video/ogg - Application - application/json, application/pdf, application/xml, application/octet-stream
+Tipe umum yang biasa digunakan : 
+
+- Image 
+- image/png, image/jpeg, image/gif
+- Audio - audio/wav, audio/mpeg 
+- Video - video/mp4, video/ogg 
+- Application 
+- application/json, application/pdf, application/xml, application/octet-stream
+
 Paths
 Request harus mengandung path pada resource yang akan dilakukan operasinya. Seperti contoh myapi.com/customers/15/orders/9 yang artinya kita mengakses customer dengan id 15 melakukan order barang/hal dengan id 9.
 Response Codes
-Macam - macam response codes : - 200 (OK) - 201 (CREATED) - 204 (NO CONTENT) - 400 (BAD REQUEST) - 403 (FORBIDDEN) - 404 (NOT FOUND) - 500 (INTERNAL SERVER ERROR) Response codes sesuai HTTP verb : - GET - 200 (OK) - POST - 201 (CREATED) - PUT - 200 (OK) - DELETE - 204 (NO CONTENT)
+Macam - macam response codes : 
+
+- 200 (OK) 
+- 201 (CREATED) 
+- 204 (NO CONTENT) 
+- 400 (BAD REQUEST) 
+- 403 (FORBIDDEN) 
+- 404 (NOT FOUND) 
+- 500 (INTERNAL SERVER ERROR) 
+
+Response codes sesuai HTTP verb :
+- GET - 200 (OK) 
+- POST - 201 (CREATED) 
+- PUT - 200 (OK)
+- DELETE - 204 (NO CONTENT)
+
 Intro Node JS
 Definisi
 Node.js adalah platform JavaSCript yang dapat berjalan di backend atau server-side di komputer secara langsung. Node.js berjalan menggunakan V8 engine pada Chrome, SpiderMonkey engine pada Mozilla, dan Chakra engine pada Microsoft Edge.
@@ -80,6 +108,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('ok');
 });
+
 Express JS
 Definisi
 Express adalah salah satu package NodeJS yang memungkinkan kita untuk membuat HTTP REST API ataupun aplikasi web dengan mudah.
@@ -100,6 +129,7 @@ body : application/json
     "age" : 21,
     "greeting" : "hello salam kenal"
 }
+
 Instalasi
 Express merupakan modules atau package yang dikembangkan menggunakan bahasa javascript.
 npm init -y
@@ -118,12 +148,14 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('Server is running on port 3000')
 })
+
 Basic Routes
 Routes
 Routes adalah sebuah endpoint yang dapat kita akses menggunakan URL di website. Didalam routes kita perlu menentkan method API, alamat dan response apa saja yang akan dikeluarkan.
 app.get('/', (req, res) => {
     res.send('Hello World')
 })
+
 Untuk menjalankannya kita dapat mengetikkan di terminal node nama_file.js lalu membuka browser dengan URL https://localhost:3000/
 Method
 Dalam REST API terdapat method :
@@ -142,6 +174,7 @@ app.get('/hello', (req, res) => {
         "greeting" : "Halo salam kenal"
     })
 })
+
 Query
 Query merupakan parameter yang digunakan untuk membantu menentukan tindakan yang lebih spesifik. Contoh query melalui URL https://localhost:3000/hello?name=zaid&age=23, pada file js seperti :
 
@@ -155,6 +188,7 @@ app.get('/hello', (req, res) => {
         greetings : "Halo salam kenal"
     })
 })
+
 Parameter
 Parameter merupakan value yang digunakan untuk membantu menentukan tindakan yang lebih spesifik yang ditulis melalui URL https://localhost:3000/hello/zaid/23, pada file js seperti :
 
@@ -168,6 +202,7 @@ app.get('/hello/:name/:age', (req, res) => {
         greetings : "Halo salam kenal"
     })
 })
+
 Nested Route
 Sebelum :
 
@@ -203,6 +238,7 @@ app.get('/zaid', (req, res) => {
 app.get('/abdillah', (req, res) => {
     res.send("Halo saya abdillah")
 })
+
 Middleware
 Middleware function adalah sebuah fungsi yang memiliki akses ke object request (req), object response (res), dan sebuah fungsi next didalam request-response cycle.
 
@@ -223,6 +259,7 @@ app.get('/', function (req, res) {
 })
 
 app.listen(3000)
+
 Memodifikasi Object Request dan Object Response
 const express = require('express')
 const app = express()
@@ -241,6 +278,7 @@ app.get('/', function (req, res) {
 })
 
 app.listen(3000)
+
 Menghentikan Request-Response Cycle
 const express = require('express')
 const app = express()
@@ -257,6 +295,7 @@ app.get('/', function (req, res) {
 })
 
 app.listen(3000)
+
 Cara Penggunaan
 Application Level Middleware
 const addRequestTime = funtion (req, res, next) {
@@ -297,6 +336,7 @@ const errorHandling = function(err, req, res, next) {
 }
 
 app.use(errorHandling)
+
 Design Database
 Menentukan Entity
 Berikut adalah contoh studi kasus yang bisa dijadikan entity dalam database:
