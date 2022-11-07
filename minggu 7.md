@@ -1,8 +1,8 @@
-Muhammad zaid abdillah teknik informatika PENS Febe-34 AYO
+## Muhammad zaid abdillah teknik informatika PENS Febe-34 AYO
 
-Writing & Presentation Test - Week 7
+## Writing & Presentation Test - Week 7
 
-MySQL Basic
+## MySQL Basic
 
 Database merupakan kumpulan data yang disimpan secara sistematis di dalam komputer yang dapat diolah dan dimanipulasi.
 
@@ -39,25 +39,26 @@ CREATE TABLE mahasiswas (
 
 Alter digunakan untuk mengubah struktur dari table yang sudah ada. Contoh :
 
-Menambah Primary Key
+**Menambah Primary Key**
 
 ALTER TABLE mahasiswas ADD PRIMARY KEY (id)
 
-Menambah Field
+**Menambah Field**
 
 ALTER TABLE mahasiswas ADD phoneNumber varchar(12)
 
-Mengubah Struktur Tabel
+**Mengubah Struktur Tabel**
 
 ALTER TABLE mahasiswas ALTER COLUMN phoneNumber varchar(13)
 
+
 DROP digunakan untuk menghapus suatu database, table dan view atau index. Contoh :
 
-Menghapus Database
+**Menghapus Database**
 
 DROP DATABASE data_sma
 
-Menghapus Table
+**Menghapus Table**
 
 DROP TABLE mahasiswas
 
@@ -101,15 +102,15 @@ GROUP BY digunakan untuk menampilkan data berdasarkan kolom yang ditentukan. Con
 
 LIMIT digunakan untuk membatasi jumlah data yang tampil. Contoh : SELECT * FROM mahasiswas LIMIT 2
 
-MySQL Lanjutan
+## MySQL Lanjutan
 
-Relations di SQL
+**Relations di SQL**
 
 One to One
 One to Many
 Many to Many
 
-Database Normalization
+**Database Normalization**
 
 Merupakan teknik analisis data yang mengorganisasikan atribut - atribut data dengan cara mengelompokkan sehingga terbentuk entitas yang non-redundant, stabil dan fleksibel.
 
@@ -128,7 +129,7 @@ DELETE Anomali, kemungkinan terjadi penghapusan data yang harusnya tidak terhapu
 
 UPDATE Anomali, nilai yang diubah menyebabkan inkonsistensi database.
 
-Bentuk Database Normalization:
+**Bentuk Database Normalization:**
 
 First Normal Form (1NF)
 
@@ -148,7 +149,7 @@ DKNF
 
 6NF
 
-Join Multiple Tables
+**Join Multiple Tables**
 
 INNER JOIN semua baris akan diambil dari kedua tabel yang akan di JOIN, selama kolom cocok dengan kondisi yang sudah ditentukan.
 
@@ -156,7 +157,7 @@ LEFT JOIN semua record dari table di sisi kiri JOIN statement akan dipilih, jika
 
 RIGHT JOIN semua records dari table di sisi kiri JOIN statement akan dipilih, bahkan jika table di sebelah kiri tidak memiliki record yang cocok.
 
-Aggregate Functions
+**Aggregate Functions**
 
 MAX mengembalikan nilai terbesar dari kolom yang dipilih.
 
@@ -168,13 +169,13 @@ COUNT mengembalikan jumlah baris yang cocok dengan kriteria yang ditentukan.
 
 AVG mengembalikan nilai rata - rata kolom numerik.
 
-Authentication & Authorization
+**Authentication & Authorization**
 
 Authentication proses pengenalan identitas user lalu diberikan akses sesuai dengan authorisasi yang diterima.
 
 Authorization proses penentuan hak akses terhadap user dalam mengambil atau melakukan suatu tindakan dalam sistem.
 
-JSON Web Token (JWT)
+**JSON Web Token (JWT)**
 
 Sebuah JSON Object sebagai cara aman untuk mewakili sekumpulan informasi antara dua pihak.
 
@@ -211,9 +212,9 @@ const token = jwt.sign({userData}, "key-ditulis-terserah")
 
 res.json(token)
 
-Sequelize
+## Sequelize
 
-Definisi
+**Definisi**
 
 Sequelize adalah ORM (Object Relational Mapping) yang berbasis promise.
 
@@ -229,19 +230,23 @@ Sequelize mendukung sebagian besar relational Database seperti :
 
 -Microsoft SQL Server
 
-Instalasi
+**Instalasi**
 npm install --save sequelize
 
 npm install --save mysql2
 
 npx sequelize-cli init
 
-Generate Model
+**Generate Model**
+
 npx sequelize-cli model:generate --name Todo --attributes title:string,description:string,startTime:date,status:string
 
 npx sequelize-cli db:migrate
+
+
 npx sequelize-cli db:migrate:undo
-Generate Seed
+
+**Generate Seed**
 npx sequelize-cli seed:generate --name demo-todo
 
 npx sequelize-cli db:seed:all
