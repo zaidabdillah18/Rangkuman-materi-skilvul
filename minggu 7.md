@@ -29,6 +29,7 @@ Interaksi yang dilakukan :
 Data Definition Language (DDL) merupakan kumpulan perintah SQL yang digunakan untuk berinteraksi dengan struktur dan definisi metadata dari objek - objek database.
 
 Membuat table pada database :
+
 CREATE TABLE mahasiswas (
     id int NOT NULL,
     fullName varchar(255) NOT NULL,
@@ -37,6 +38,7 @@ CREATE TABLE mahasiswas (
 );
 
 Alter digunakan untuk mengubah struktur dari table yang sudah ada. Contoh :
+
 Menambah Primary Key
 
 ALTER TABLE mahasiswas ADD PRIMARY KEY (id)
