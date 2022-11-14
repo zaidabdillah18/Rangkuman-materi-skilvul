@@ -2,17 +2,17 @@
 
 ## MongoDB
 
-**Definisi
+**Definisi**
 
 MongoDB adalah salah satu database NoSQL menggunakan dokumen berformat JSON dengan skema opsional.
 
-**Perbedaan SQL dengan NoSQL
+**Perbedaan SQL dengan NoSQL**
 
 SQL menyimpan data menggunakan relasi tabel, NoSQL menggunakan dokumen dengan format JSON.
 
-**Kelebihan dan Kekurangan NoSQL
+**Kelebihan dan Kekurangan NoSQL**
 
-**Kelebihan
+**Kelebihan**
 
 -Tidak membutuhkan Tabel.
 
@@ -20,7 +20,7 @@ SQL menyimpan data menggunakan relasi tabel, NoSQL menggunakan dokumen dengan fo
 
 -Performa lebih cepat dengan kemampuan menampung banyak data yang bervariasi.
 
-**Kekurangan
+**Kekurangan**
 
 -Tidak mendukung transaksi.
 
@@ -28,7 +28,7 @@ SQL menyimpan data menggunakan relasi tabel, NoSQL menggunakan dokumen dengan fo
 
 -Hanya bisa menampung maksimal 16MB tiap document.
 
-Anatomi Database MongoDB
+**Anatomi Database MongoDB**
 
 Database adalah wadah unuk menyimpan berbagai macam Collection.
 
@@ -36,25 +36,25 @@ Collection adalah tempat kumpulan dari berbagai macam document.
 
 Document adalah data yang disimpan dalam Collection.
 
-Instalasi
+**Instalasi**
 
-Download MongoDB Server beserta MongoDB Compass.
+-Download MongoDB Server beserta MongoDB Compass.
 
-Setelah proses download dan instalasi selesai, buka MongoDB Compass.
+-Setelah proses download dan instalasi selesai, buka MongoDB Compass.
 
-Klik New Connection lalu langsung klik Connect tanpa merubah URI yang tertera.
+-Klik New Connection lalu langsung klik Connect tanpa merubah URI yang tertera.
 
-Klik _MONGOSH di pojok kiri bawah untuk membuka MongoDB Shell apabila ingin melakukan perintah untuk mengatur database.
+-Klik _MONGOSH di pojok kiri bawah untuk membuka MongoDB Shell apabila ingin melakukan perintah untuk mengatur database.
 
-MongoDB siap digunakan.
+-MongoDB siap digunakan.
 
-Mongoose
+**Mongoose**
 
-Definisi
+**Definisi**
 
 Mongoose adalah library sebagai Object Modelling MongoDB untuk NodeJS.
 
-Instalasi
+**Instalasi**
 
 Install Mongoose npm install mongoose
 
@@ -68,7 +68,7 @@ const db = mongoose.connect(db_url)
 
 module.exports = db
 
-Membuat Schema
+**Membuat Schema**
 
 Contoh membuat User Schema (buat folder models, didalamnya buat file user.js)
 
@@ -94,7 +94,7 @@ const User = mongoose.model('User', userSchema)
 
 module.exports = User
 
-CRUD Mongoose
+**CRUD Mongoose**
 
 GET data tanpa menampilkan field yang dipilih
 
@@ -111,7 +111,7 @@ let getUserByID = async(req, res) => {
     res.status(200).json(user)
 }
 
-POST data
+**POST data**
 
 let addUser = (req, res) => {
     const data = req.body
@@ -121,7 +121,7 @@ let addUser = (req, res) => {
     res.status(201).json({message: "Data created"})
 }
 
-UPDATE data
+**UPDATE data**
 
 let updateUserByID = async(req, res) => {
     const id = await req.params.id
@@ -135,7 +135,8 @@ let updateUserByID = async(req, res) => {
     
     res.status(201).json({message: "Data updated"})
 }
-DELETE data
+
+**DELETE data**
 
 let updateUserByID = async(req, res) => {
     const id = await req.params.id
@@ -149,7 +150,8 @@ let updateUserByID = async(req, res) => {
     
     res.status(201).json({message: "Data updated"})
 }
-Populate Mongoose
+
+**Populate Mongoose**
 
 Menambahkan field user pada Schema Tugas.
 
@@ -189,39 +191,39 @@ getTugasByID: async(req, res) => {
 
 **Definisi
 
-Docker adalah software yang menjalankan suatu aplikasi menggunakan container.
+-Docker adalah software yang menjalankan suatu aplikasi menggunakan container.
 
-Docker men-sharing kernel dari host OS, serta meletakkan aplikasi pada container sehingga dapat dijalankan dimana saja dan kapan saja.
+-Docker men-sharing kernel dari host OS, serta meletakkan aplikasi pada container sehingga dapat dijalankan dimana saja dan kapan saja.
 
-Perbedaan Virtual Machine dengan Docker
+**Perbedaan Virtual Machine dengan Docker**
 
-VM memakan banyak resource dan waktu untuk booting karena melakukan virtualisasi pada host hardware-nya.
+-VM memakan banyak resource dan waktu untuk booting karena melakukan virtualisasi pada host hardware-nya.
 
-Container melakukan virtualisasi pada host OS-nya sehingga tidak memakan banyak resource dan waktu.
+-Container melakukan virtualisasi pada host OS-nya sehingga tidak memakan banyak resource dan waktu.
 
 **Anatomi Docker
 
-Docker File merupakan blueprint untuk membuat image.
+-Docker File merupakan blueprint untuk membuat image.
 
-Image merupakan template untuk menjalankan container.
+-Image merupakan template untuk menjalankan container.
 
-Container merupakan perwujudan dari image.
+-Container merupakan perwujudan dari image.
 
-Docker Registry merupakan tempat untuk upload / download image.
+-Docker Registry merupakan tempat untuk upload / download image.
 
-Instalasi
+**Instalasi**
 
-Download Docker
+-Download Docker
 
-docker pull chuanwen/cowsay
+-docker pull chuanwen/cowsay
 
-docker run chuanwen/cowsay
+-docker run chuanwen/cowsay
 
-Menjalankan Node JS dengan Container Via Dockerfile
+-Menjalankan Node JS dengan Container Via Dockerfile
 
-Membuat file Dockerfile di dalam folder project.
+-Membuat file Dockerfile di dalam folder project.
 
-isi Dockerfile dengan :
+-isi Dockerfile dengan :
 
 FROM node:alpine
 
@@ -237,7 +239,7 @@ Membuat .dockerignore berisi:
 
 node_modules
 
-Dockerfile
+**Dockerfile**
 
 .dockerignore
 
